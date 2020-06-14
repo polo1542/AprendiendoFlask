@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Inicio{% endblock %}
+{% block content %}
+{{ super() }}
+     <p>=======================================================================================================</p>
+     <h1>Resultados de la base de datos</h1>
+     {% for item in results %}
+     <h2>ID: {{ item.id  }} Nombre: {{ item.name }} Ubicacion: {{ item.location }}</h2>
+     {% endfor %}
+     <p>=======================================================================================================</p>
+     <h1>Hola {{name}}! esta es la pagina Home! </h1>
+     {% if display  %}
+     <h2>El display esta en verdadero por eso me puedes ver</h2>
+     {% else %}
+     <h2>El display esta en falso por eso ves este mensaje carnal</h2>
+     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo minima necessitatibus, assumenda perferendis commodi ut ea ipsam explicabo earum. Officia adipisci accusamus nesciunt quae labore, animi omnis tempora a corrupti?</p>
+     {% endif %}
+     <p>=======================================================================================================</p>
+     {% for x in mylist %}
+     <h3>{{ x }}</h3>
+     {% endfor %}
+     <p>=======================================================================================================</p>
+     {% for x in listofdictionaries %}
+     <h4>{{ x.nombre  }}</h4>
+     {% endfor %}
+     <p>=======================================================================================================</p>
+     <img src="{{url_for('static', filename='images/prettyprinted.png') }}" alt="">
+     <p>=======================================================================================================</p>
+     {% include "include.html"%}
+{% endblock %}
